@@ -16,7 +16,7 @@ import { Axes } from "./entites/Axes.js";
 import { Saws } from "./entites/Saws.js";
 import { Birds } from "./entites/Birds.js";
 
-// Single Jump Version of ~ Super Mango ~ 
+// Coyote Run Special Normal mode
 
 
 kaboom({
