@@ -1,10 +1,13 @@
 export class Player{
+
+    // This is the Single Jump Version of ~ Super Mango ~
+
     isRespawning = false;
     heightDelta = 0;
     isMoving = false;
     coyoteLapse = 0.2;
     coins = 0;
-    hasJumpedTwice = false;
+    hasJumpedOnce = false;    
     currentLevelScene = 1;
     constructor(posX, posY, speed, jumpForce, nbLives, currentLevelScene, isInTerminal){
         this.posX = posX;
@@ -77,24 +80,18 @@ export class Player{
             // vertically the player is not moving and is set to 0 and horizontall moves at the set speed.
             this.isMoving = true;
         });
-        onKeyDown("space", () => {
-        if(this.gameObj.isGrounded() && !this.isRespawning){
+        onKeyPress("space", () => {
+        if(this.gameObj.isGrounded() && !this.isRespawning && !this.hasJumpedOnce){
             this.hasJumpedOnce = true;
             if(!this.isRespawning)this.gameObj.jump(this.jumpForce);
             play("jump");
         }   
-    if(!this.gameObj.isGrounded() && time() - this.timeSinceLastGrounded < this.coyoteLapse && !this.hasJumpedTwice){
-        this.hasJumpedTwice = false;
+    if(!this.gameObj.isGrounded() && time() - this.timeSinceLastGrounded < this.coyoteLapse ){
+        
         if(!this.isRespawning)this.gameObj.jump(this.jumpForce);
             play("jump");
     } });
-    onKeyPress("space", () => {
-        if(!this.gameObj.isGrounded() && !this.isRespawning && !this.hasJumpedTwice){
-            this.gameObj.jump(this.jumpForce);
-            play("jump");
-            this.hasJumpedTwice = true;
-        }
-    });
+    
     
     
 
@@ -122,7 +119,7 @@ export class Player{
     onUpdate(() => {
         if(this.gameObj.isGrounded()){
             this.hasJumpedOnce = false;
-            this.hasJumpedTwice = false;
+        
             this.timeSinceLastGrounded = time();
         }
 
