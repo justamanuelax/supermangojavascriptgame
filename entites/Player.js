@@ -86,10 +86,13 @@ export class Player{
             if(!this.isRespawning)this.gameObj.jump(this.jumpForce);
             play("jump");
         }   
-    if(!this.gameObj.isGrounded() && time() - this.timeSinceLastGrounded < this.coyoteLapse ){
-        
-        if(!this.isRespawning)this.gameObj.jump(this.jumpForce);
-            play("jump");
+    if(!this.gameObj.isGrounded() && time() - this.timeSinceLastGrounded < this.coyoteLapse && !this.hasJumpedOnce){
+        this.hasJumpedOnce = true;
+        if(!this.isRespawning){
+            this.gameObj.jump(this.jumpForce);
+            
+        }
+        play("jump");
     } });
     
     
