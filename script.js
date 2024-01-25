@@ -16,7 +16,7 @@ import { Axes } from "./entites/Axes.js";
 import { Saws } from "./entites/Saws.js";
 import { Birds } from "./entites/Birds.js";
 
-// Coyote Run Special Normal mode
+// Coyote Run Special Extra
 
 
 kaboom({

@@ -5,7 +5,7 @@ export class Player{
     isRespawning = false;
     heightDelta = 0;
     isMoving = false;
-    coyoteLapse = 0.7;
+    coyoteLapse = 2.7;
     coins = 0;
     hasJumpedOnce = false;    
     currentLevelScene = 1;
@@ -72,7 +72,7 @@ export class Player{
             // vertically the player is not moving and is set to 0 and horizontall moves at the set speed.
             this.isMoving = true;
         });
-        // Coyote Run Special Normal mode 
+        // Coyote Run Special Extra
         onKeyDown("right", () => {
             if(this.gameObj.curAnim() !== "run" && !this.isRespawning) this.gameObj.play("run");
             this.gameObj.flipX = false;

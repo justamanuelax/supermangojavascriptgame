@@ -1,5 +1,5 @@
 class UIManager {
-    //  Single Jump Version of ~ Super Mango ~
+    
     displayLivesCount(player){
         this.livesCountUI = add([
             text("",{ fount : "Round" , size : 50}),
