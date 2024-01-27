@@ -59,7 +59,7 @@ export class Player{
         this.gameObj.onCollide("coin",(coin) => {
             this.coins++;
             destroy(coin);
-            play("coin", {speed: 1});
+            play("coin", {speed: 2});
         });
  
     }
