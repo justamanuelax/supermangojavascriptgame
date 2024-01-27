@@ -2,7 +2,7 @@ export class Player{
     isRespawning = false;
     heightDelta = 0;
     isMoving = false;
-    coyoteLapse = 0.2;
+    coyoteLapse = 0;
     coins = 0;
     hasJumpedTwice = false;
     currentLevelScene = 1;
@@ -84,17 +84,11 @@ export class Player{
             play("jump");
         }   
     if(!this.gameObj.isGrounded() && time() - this.timeSinceLastGrounded < this.coyoteLapse && !this.hasJumpedTwice){
-        this.hasJumpedTwice = false;
+        
         if(!this.isRespawning)this.gameObj.jump(this.jumpForce);
             play("jump");
     } });
-    onKeyPress("space", () => {
-        if(!this.gameObj.isGrounded() && !this.isRespawning && !this.hasJumpedTwice){
-            this.gameObj.jump(this.jumpForce);
-            play("jump");
-            this.hasJumpedTwice = true;
-        }
-    });
+    
     
     
 
@@ -122,7 +116,7 @@ export class Player{
     onUpdate(() => {
         if(this.gameObj.isGrounded()){
             this.hasJumpedOnce = false;
-            this.hasJumpedTwice = false;
+            
             this.timeSinceLastGrounded = time();
         }
 
