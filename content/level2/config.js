@@ -1,6 +1,6 @@
 export const level2Config = {
     gravity: 1400,
-    playerSpeed : 550,
+    playerSpeed : 400,
     JumpForce : 650,
     nbLives : 3,
     playerStartPosX : 1500,
@@ -30,7 +30,7 @@ export const level2Config = {
         () => vec2(4500, 300),
       ],
       spiderRanges: [300, 150, 150, 300, 300],
-      spiderDuration: [7, 8, 7, 8, 7],
+      spiderDuration: [2,3,2,3,2],
       spiderType: 2,
       axesPositions: [
         () => vec2(2100, -50),

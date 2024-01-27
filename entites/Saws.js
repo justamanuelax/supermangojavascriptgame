@@ -33,7 +33,7 @@ export class Saws {
             tween( // moving
                 saw.pos.x,
                 saw.pos.x + moveBy,
-                7,
+                2,
                 (posX) => (saw.pos.x = posX),
                 easings.linear
             ),
@@ -47,7 +47,7 @@ export class Saws {
         ]);
         
     }
-    
+
     // Define a method named setMovementPattern
     setMovementPattern() {
         // Iterate over each [index, saw] pair in the saws array

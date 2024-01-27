@@ -31,7 +31,7 @@ export class Projectiles{
                 await tween(
                     projectile.pos.y,
                     projectile.pos.y - this.ranges[index],
-                    10,
+                    2,
                     (posY) => projectile.pos.y = posY,
                     easings.easeOutSine
                 )
@@ -44,7 +44,7 @@ export class Projectiles{
                     await tween(
                         projectile.pos.y,
                         projectile.pos.y + this.ranges[index],
-                        10,
+                        2,
                         (posY) => projectile.pos.y = posY,
                         easings.easeOutSine
                     )
