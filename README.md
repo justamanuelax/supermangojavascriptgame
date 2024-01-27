@@ -1,2 +1,2 @@
 # supermangojavascriptgame
-This is a super mario alternative game I created from JSLegendDev SuperMango a super mario javascript alternative in javascript kaboom.js
+This is a super mario alternative game I created from JSLegendDev SuperMango a super mario javascript alternative in javascript kaboom.js I am giving this code away to github completely for free as this account is an opensource absolutist account. Please feel free to fork the code and create adjustments to improve give feedback or just copy and paste or even commercialize.  The supermario game alternative game has 10 branches including the master / (main) branch with 10 variants. Thanks. Have fun and happy coding. The code is in javascript.
