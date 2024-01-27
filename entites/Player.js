@@ -83,16 +83,17 @@ export class Player{
             if(!this.isRespawning)this.gameObj.jump(this.jumpForce);
             play("jump");
         }   
-    if(!this.gameObj.isGrounded() && time() - this.timeSinceLastGrounded < this.coyoteLapse && !this.hasJumpedTwice){
-        this.hasJumpedTwice = false;
-        if(!this.isRespawning)this.gameObj.jump(this.jumpForce);
-            play("jump");
-    } });
+     });
     onKeyPress("space", () => {
         if(!this.gameObj.isGrounded() && !this.isRespawning && !this.hasJumpedTwice){
             this.gameObj.jump(this.jumpForce);
             play("jump");
             this.hasJumpedTwice = true;
+        }
+        if(!this.gameObj.isGrounded() && time() - this.timeSinceLastGrounded < this.coyoteLapse && !this.hasJumpedTwice){
+            this.hasJumpedTwice = true;
+            if(!this.isRespawning)this.gameObj.jump(this.jumpForce);
+                play("jump");
         }
     });
     
